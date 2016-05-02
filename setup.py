@@ -67,11 +67,13 @@ if __name__ == "__main__":
         install_requires=INSTALL_REQUIRES,
         tests_require=TESTS_REQUIRE,
 
-
         packages=["mousestyles", "mousestyles.tests",
                   "mousestyles.data", "mousestyles.data.tests",
-                  "mousestyles.classification", "mousestyles.classification.tests",
+                  "mousestyles.classification",
+                  "mousestyles.classification.tests",
                   "mousestyles.dynamics", "mousestyles.dynamics.tests",
-                  "mousestyles.path_diversity", "mousestyles.path_diversity.tests"],
+                  "mousestyles.path_diversity",
+                  "mousestyles.path_diversity.tests",
+                  "mousestyles.behavior", "mousestyles.behavior.tests"],
         package_data={'mousestyles.data': ['*.npy', '*/*/*.npy']}
     )

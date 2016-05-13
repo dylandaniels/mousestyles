@@ -110,10 +110,15 @@ class BehaviorTree():
             root = struct
             children = []
 
+        if isinstance(self[root], list):
+            formatted_value = " " .join(
+                ["{:.6f}".format(v) for v in self[root]])
+        else:
+            formatted_value = "{:.6f}".format(self[root])
         result = "\n" + " " * 5 * level + \
-            "{}: {:.6f} {}".format(root,
-                                   self[root],
-                                   self.units[root])
+            "{}: {} {}".format(root,
+                               formatted_value,
+                               self.units[root])
 
         for child in children:
             current_tree = self.copy()

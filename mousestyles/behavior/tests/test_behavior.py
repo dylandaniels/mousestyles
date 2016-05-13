@@ -6,6 +6,7 @@ from __future__ import (absolute_import, division, print_function,
 import pytest
 
 from mousestyles import behavior
+from mousestyles.behavior import metrics
 from mousestyles import data
 from mousestyles import intervals
 
@@ -20,7 +21,7 @@ def test_create_intervals1():
 
     # More specifically this is testing 'Food' Consumption
     # for strain=0, mouse=0, day=0
-    load_ints1 = behavior.create_intervals(
+    load_ints1 = metrics.create_intervals(
         'F', strain=0, mouse=0, day=0)
 
     # Calculate the sum of the loaded intervals
@@ -45,7 +46,7 @@ def test_create_intervals2():
 
     # More specifically this is testing 'Water' Consumption
     # for strain=0, mouse=1, day=1
-    load_ints1 = behavior.create_intervals(
+    load_ints1 = metrics.create_intervals(
         'W', strain=0, mouse=1, day=1)
 
     # Calculate the sum of the loaded intervals
@@ -70,7 +71,7 @@ def test_create_collapse_intervals1():
 
     # More specifically this is testing 'Food' Consumption
     # for strain=0, mouse=0, day=0
-    load_ints1 = behavior.create_intervals(
+    load_ints1 = metrics.create_intervals(
         'F', strain=0, mouse=0, day=0)
 
     # Collapse the intervals within a given threshold
@@ -123,8 +124,8 @@ def test_create_intervals():
 
     # Checking intervals are being correctly loaded for a particular
     # activity type and mouse-day
-    load_ints1 = behavior.create_intervals(
-        'F', strain=0, mouse=0, day=0, bout_threshold=0.001)
+    load_ints1 = metrics.create_intervals(
+        'F', strain=0, mouse=0, day=0)
 
     # Calculate the sum of the loaded intervals
     ints1_sum = sum(load_ints1)

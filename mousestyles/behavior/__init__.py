@@ -3,3 +3,4 @@ from __future__ import (absolute_import, division, print_function,
 
 from .construct_trees import process_raw_intervals, compute_tree
 from .behavior_tree import BehaviorTree
+from .metrics import create_intervals, create_collapsed_intervals
